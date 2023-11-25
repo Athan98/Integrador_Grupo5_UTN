@@ -23,6 +23,14 @@ public class Tecnico implements Serializable {
     private String nombre;
     private boolean ocupado;
     
+    
+	public Tecnico(Especialidad especialidad, String nombre, boolean ocupado) {
+		super();
+		this.especialidad = especialidad;
+		this.nombre = nombre;
+		this.ocupado = ocupado;
+	}
+
 	public Tecnico(int idTecnico, Especialidad especialidad, String nombre, boolean ocupado) {
 		super();
 		this.idTecnico = idTecnico;
