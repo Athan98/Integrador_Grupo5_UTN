@@ -40,11 +40,11 @@ public class Main {
     	Especialidad esp4 = new Especialidad("Tango");
     	Especialidad esp5 = new Especialidad("MacOs");
     	
-    	Tecnico t1 = new Tecnico(0,esp1,"Matias",false);
-    	Tecnico t2 = new Tecnico(0,esp2,"Roxana",false);
-    	Tecnico t3 = new Tecnico(0,esp3,"Andrea",false);
-    	Tecnico t4 = new Tecnico(0,esp4,"Lautaro",false);
-    	Tecnico t5 = new Tecnico(0,esp5,"Nicolas",false);
+    	Tecnico t1 = new Tecnico(esp1,"Matias",false);
+    	Tecnico t2 = new Tecnico(esp2,"Roxana",false);
+    	Tecnico t3 = new Tecnico(esp3,"Andrea",false);
+    	Tecnico t4 = new Tecnico(esp4,"Lautaro",false);
+    	Tecnico t5 = new Tecnico(esp5,"Nicolas",false);
     	
     	ArrayList <Tecnico> listaTecnicos = new ArrayList<Tecnico>();
     	listaTecnicos.add(t1);
