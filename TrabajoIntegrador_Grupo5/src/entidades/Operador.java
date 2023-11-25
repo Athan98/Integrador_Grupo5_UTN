@@ -15,7 +15,11 @@ public class Operador implements Serializable {
 	private int idOperador;
 	private String nombre;
 	
-	
+
+public Operador(String nombre) {
+		this.nombre = nombre;
+	}
+
 public Operador(int idOperador, String nombre) {
 	this.idOperador = idOperador;
 	this.nombre = nombre;
