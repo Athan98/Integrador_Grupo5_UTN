@@ -11,11 +11,15 @@ public class Especialidad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idEspecialidad;
+	private int idEspecialidad;
 	private String nombreEspecialidad;
 
 	
-	public Especialidad(String idEspecialidad, String nombreEspecialidad) {
+	public Especialidad(String nombreEspecialidad) {
+		this.nombreEspecialidad = nombreEspecialidad;
+	}
+
+	public Especialidad(int idEspecialidad, String nombreEspecialidad) {
 		this.idEspecialidad = idEspecialidad;
 		this.nombreEspecialidad = nombreEspecialidad;
 	}
@@ -23,11 +27,11 @@ public class Especialidad implements Serializable {
 	public Especialidad() {
 	}
 
-	public String getIdEspecialidad() {
+	public int getIdEspecialidad() {
 		return idEspecialidad;
 	}
 
-	public void setIdEspecialidad(String idEspecialidad) {
+	public void setIdEspecialidad(int idEspecialidad) {
 		this.idEspecialidad = idEspecialidad;
 	}
 
