@@ -60,10 +60,10 @@ public class Main {
     	Operador op5 = new Operador("Lucas");
     	
     	Incidente inc1 = new Incidente("Fallo Windows",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c1,listaTecnicos, esp1,op1);
-    	Incidente inc2 = new Incidente("Fallo Linux",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c1,listaTecnicos, esp2,op2);
-    	Incidente inc3 = new Incidente("Fallo Sap",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c1,listaTecnicos, op3);
-    	Incidente inc4 = new Incidente("Fallo Tango",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c1,listaTecnicos, op4);
-    	Incidente inc5 = new Incidente("Fallo MacOs",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c1,listaTecnicos, op5);
+    	Incidente inc2 = new Incidente("Fallo Linux",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c2,listaTecnicos, esp2,op2);
+    	Incidente inc3 = new Incidente("Fallo Sap",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c3,listaTecnicos,esp3,op3);
+    	Incidente inc4 = new Incidente("Fallo Tango",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c4,listaTecnicos,esp4,op4);
+    	Incidente inc5 = new Incidente("Fallo MacOs",false,LocalDate.now(),LocalDate.of(2023, 12, 2), c5,listaTecnicos,esp5,op5);
     	
     	
 	}
