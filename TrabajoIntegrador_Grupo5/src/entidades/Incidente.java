@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -19,6 +21,7 @@ public class Incidente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idIncidente;
 	private String descripcion;
 	private boolean resuelto;
@@ -41,6 +44,19 @@ public class Incidente implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "idOperador")
 	private Operador operador;
+
+	
+	public Incidente(String descripcion, boolean resuelto, LocalDate fechaReporte, LocalDate fechaResolucion,
+			Cliente cliente, List<Tecnico> listaTecnicos, Especialidad especialidad, Operador operador) {
+		this.descripcion = descripcion;
+		this.resuelto = resuelto;
+		this.fechaReporte = fechaReporte;
+		this.fechaResolucion = fechaResolucion;
+		this.cliente = cliente;
+		ListaTecnicos = listaTecnicos;
+		this.especialidad = especialidad;
+		this.operador = operador;
+	}
 
 	public Incidente(int idIncidente, String descripcion, boolean resuelto, LocalDate fechaReporte,
 			LocalDate fechaResolucion, Cliente cliente, List<Tecnico> listaTecnicos, Especialidad especialidad) {
