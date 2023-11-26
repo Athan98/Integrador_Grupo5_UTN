@@ -31,21 +31,6 @@ public class Main {
     	Session session = sessionFactory.openSession();
  
     	session.beginTransaction();
-    
-    	// Creamos los clientes
-    	Cliente c1 = new Cliente("Provemax","33123312","Carlos","Gonzales","Direccion_1");
-    	Cliente c2 = new Cliente("HotelStar","22323322","Fernando","Alonso","Direccion_2");
-    	Cliente c3 = new Cliente("TodoCar","212424244","Juan","Martinez","Direccion_3");
-    	Cliente c4 = new Cliente("FrioStar","32333334","Gonzalo","Perez","Direccion_4");
-    	Cliente c5 = new Cliente("ElectroH","33125223","Martin","Rodriguez","Direccion_5");
-    	
-    	// Agregamos los clientes
-    	DaoCliente daoCliente = new DaoCliente(); 
-    	daoCliente.Add(c1);
-    	daoCliente.Add(c2);
-    	daoCliente.Add(c3);
-    	daoCliente.Add(c4);
-    	daoCliente.Add(c5);
     	
     	// Creamos las especialidades
     	Especialidad esp1 = new Especialidad("Windows");
@@ -83,6 +68,22 @@ public class Main {
     	listaTecnicos.add(t3);
     	listaTecnicos.add(t4);
     	listaTecnicos.add(t5);
+    
+    	// Creamos los clientes
+    	Cliente c1 = new Cliente("Provemax","33123312","Carlos","Gonzales","Direccion_1");
+    	Cliente c2 = new Cliente("HotelStar","22323322","Fernando","Alonso","Direccion_2");
+    	Cliente c3 = new Cliente("TodoCar","212424244","Juan","Martinez","Direccion_3");
+    	Cliente c4 = new Cliente("FrioStar","32333334","Gonzalo","Perez","Direccion_4");
+    	Cliente c5 = new Cliente("ElectroH","33125223","Martin","Rodriguez","Direccion_5");
+    	
+    	// Agregamos los clientes
+    	DaoCliente daoCliente = new DaoCliente(); 
+    	daoCliente.Add(c1);
+    	daoCliente.Add(c2);
+    	daoCliente.Add(c3);
+    	daoCliente.Add(c4);
+    	daoCliente.Add(c5);
+    	
     	
     	// Creamos los operadores
     	Operador op1 = new Operador("Tomas");
