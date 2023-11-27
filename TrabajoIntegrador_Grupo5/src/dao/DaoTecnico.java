@@ -1,7 +1,12 @@
 package dao;
 
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
 import org.hibernate.Session;
 
+import entidades.Cliente;
 import entidades.Tecnico;
 
 public class DaoTecnico {
@@ -53,4 +58,23 @@ public class DaoTecnico {
         
         config.cerrarSession();
 	}
+	
+	public List<Tecnico> listarTecnicos() {
+		ConfigHibernate config = new ConfigHibernate();
+		Session session = config.abrirConexion();
+		List<Tecnico> tecnicosList = null;
+
+		session.beginTransaction();
+		try {
+		tecnicosList = session.createQuery("FROM Tecnico").list();
+		}catch (NullPointerException ex) {
+			JOptionPane.showMessageDialog(null, ex.getMessage());
+		}catch (Exception ex) {
+			JOptionPane.showMessageDialog(null, ex.getMessage());
+		}
+		config.cerrarSession();
+
+		return tecnicosList;
+	}
+	
 }
