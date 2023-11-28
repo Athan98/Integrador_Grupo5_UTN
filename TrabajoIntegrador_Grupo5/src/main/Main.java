@@ -152,11 +152,16 @@ public class Main {
 
 		// System.out.println(daoIncidente.listarIncidentes());
 
-		incidentesResueltos(-1);
+		incidentesResueltos(4);
 
 	}
 
 	public static void incidentesResueltos(int dias) {
+		
+		if (dias <= 1) {
+	        System.out.println("El número de días debe ser mayor a 1.");
+	        return; 
+	    }
 
 		DaoIncidente daoIncidente = new DaoIncidente();
 		List<Incidente> incidentesList = daoIncidente.listarIncidentes();
@@ -184,7 +189,6 @@ public class Main {
 		System.out.println("Cantidad de incidentes resueltos: " + contadorInc);
 
 		// ENCONTRAR EL TECNICO MAS REPETIDO
-
 		if (!contadorTecnicos.isEmpty()) {
 			String tecnicoMasRepetido = null;
 			int maxContador = 0;
