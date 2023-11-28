@@ -26,6 +26,14 @@ public class Tecnico implements Serializable {
     private boolean ocupado;
     
     
+    
+    
+	public Tecnico(String nombre, boolean ocupado) {
+		super();
+		this.nombre = nombre;
+		this.ocupado = ocupado;
+	}
+
 	public Tecnico(Especialidad especialidad, String nombre, boolean ocupado) {
 		super();
 		this.especialidad = especialidad;

@@ -72,9 +72,10 @@ public class DaoTecnico {
 		}catch (Exception ex) {
 			JOptionPane.showMessageDialog(null, ex.getMessage());
 		}
-		config.cerrarSession();
+
 
 		return tecnicosList;
+		
 	}
 	
 }

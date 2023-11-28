@@ -12,11 +12,11 @@
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
         
-        <mapping class="entidades.Cliente"/>
         <mapping class="entidades.Especialidad"/>
-        <mapping class="entidades.Incidente"/>
-        <mapping class="entidades.Operador"/>
         <mapping class="entidades.Tecnico"/>
-
+        <mapping class="entidades.Cliente"/>
+        <mapping class="entidades.Operador"/>
+        <mapping class="entidades.Incidente"/>
+        
     </session-factory>
 </hibernate-configuration>
