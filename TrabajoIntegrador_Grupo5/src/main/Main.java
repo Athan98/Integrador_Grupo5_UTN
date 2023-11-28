@@ -1,6 +1,7 @@
 package main;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,11 +45,11 @@ public class Main {
 
 		// Agregamos las especialidades
 		DaoEspecialidad daoEspecialidad = new DaoEspecialidad();
-		// daoEspecialidad.Add(esp1);
-		// daoEspecialidad.Add(esp2);
-		// daoEspecialidad.Add(esp3);
-		// daoEspecialidad.Add(esp4);
-		// daoEspecialidad.Add(esp5);
+		 daoEspecialidad.Add(esp1);
+		 daoEspecialidad.Add(esp2);
+		 daoEspecialidad.Add(esp3);
+		 daoEspecialidad.Add(esp4);
+		 daoEspecialidad.Add(esp5);
 
 		// Creamos los tecnicos
 		Tecnico t1 = new Tecnico(esp1, "Matias", false);
@@ -59,18 +60,18 @@ public class Main {
 
 		// Agregamos los tecnicos
 		DaoTecnico daoTecnico = new DaoTecnico();
-		// daoTecnico.Add(t1);
-		// daoTecnico.Add(t2);
-		// daoTecnico.Add(t3);
-		// daoTecnico.Add(t4);
-		// daoTecnico.Add(t5);
+		 daoTecnico.Add(t1);
+		 daoTecnico.Add(t2);
+		 daoTecnico.Add(t3);
+		 daoTecnico.Add(t4);
+		 daoTecnico.Add(t5);
 
 		ArrayList<Tecnico> listaTecnicos = new ArrayList<Tecnico>();
-		// listaTecnicos.add(t1);
-		// listaTecnicos.add(t2);
-		// listaTecnicos.add(t3);
-		// listaTecnicos.add(t4);
-		// listaTecnicos.add(t5);
+		 listaTecnicos.add(t1);
+		 listaTecnicos.add(t2);
+		 listaTecnicos.add(t3);
+		 listaTecnicos.add(t4);
+		 listaTecnicos.add(t5);
 
 		// Creamos los clientes
 		Cliente c1 = new Cliente("Provemax", "33123312", "Carlos", "Gonzales", "Direccion_1");
@@ -81,11 +82,11 @@ public class Main {
 
 		// Agregamos los clientes
 		DaoCliente daoCliente = new DaoCliente();
-		// daoCliente.Add(c1);
-		// daoCliente.Add(c2);
-		// daoCliente.Add(c3);
-		// daoCliente.Add(c4);
-		// daoCliente.Add(c5);
+		 daoCliente.Add(c1);
+		 daoCliente.Add(c2);
+		 daoCliente.Add(c3);
+		 daoCliente.Add(c4);
+		 daoCliente.Add(c5);
 
 		// Creamos los operadores
 		Operador op1 = new Operador("Tomas");
@@ -96,31 +97,38 @@ public class Main {
 
 		// Agregamos los operadores
 		DaoOperador daoOperador = new DaoOperador();
-		// daoOperador.Add(op1);
-		// daoOperador.Add(op2);
-		// daoOperador.Add(op3);
-		// daoOperador.Add(op4);
-		// daoOperador.Add(op5);
+		 daoOperador.Add(op1);
+		 daoOperador.Add(op2);
+		 daoOperador.Add(op3);
+		 daoOperador.Add(op4);
+		 daoOperador.Add(op5);
 
 		// Creamos los incidentes
-		Incidente inc1 = new Incidente("Fallo Windows", false, LocalDate.now(), LocalDate.of(2023, 12, 2), c1,
-				listaTecnicos, esp1, op1);
-		Incidente inc2 = new Incidente("Fallo Linux", false, LocalDate.now(), LocalDate.of(2023, 12, 2), c2,
-				listaTecnicos, esp2, op2);
-		Incidente inc3 = new Incidente("Fallo Sap", false, LocalDate.now(), LocalDate.of(2023, 12, 2), c3,
-				listaTecnicos, esp3, op3);
-		Incidente inc4 = new Incidente("Fallo Tango", false, LocalDate.now(), LocalDate.of(2023, 12, 2), c4,
-				listaTecnicos, esp4, op4);
-		Incidente inc5 = new Incidente("Fallo MacOs", false, LocalDate.now(), LocalDate.of(2023, 12, 2), c5,
-				listaTecnicos, esp5, op5);
+		LocalDate fechaReporte = LocalDate.now().minusDays(10);
+		String fechaReporteFormateada = fechaReporte.format(DateTimeFormatter.ISO_DATE);
+		
+		LocalDate fechaResolucion = LocalDate.of(2023, 11, 24);
+		String fechaResolucionFormateada = fechaResolucion.format(DateTimeFormatter.ISO_DATE);
+		
+		
+		Incidente inc1 = new Incidente("Fallo Windows", true, fechaReporteFormateada, fechaResolucionFormateada, c1, listaTecnicos, esp1, op1);
+		Incidente inc1b = new Incidente("Fallo Windows", true, fechaReporteFormateada, fechaResolucionFormateada, c1, listaTecnicos, esp1, op1);
+		Incidente inc1c = new Incidente("Fallo Windows", true, fechaReporteFormateada, fechaResolucionFormateada, c1, listaTecnicos, esp1, op1);
+		Incidente inc2 = new Incidente("Fallo Linux", true, fechaReporteFormateada, fechaResolucionFormateada, c2, listaTecnicos, esp2, op2);
+		Incidente inc3 = new Incidente("Fallo Sap", true, fechaReporteFormateada, fechaResolucionFormateada, c3, listaTecnicos, esp3, op3);
+		Incidente inc4 = new Incidente("Fallo Tango", false, fechaReporteFormateada, fechaResolucionFormateada, c4, listaTecnicos, esp4, op4);
+		Incidente inc5 = new Incidente("Fallo MacOs", false, fechaReporteFormateada, fechaResolucionFormateada, c5, listaTecnicos, esp5, op5);
 
 		// Agregamos los incidentes
 		DaoIncidente daoIncidente = new DaoIncidente();
-		// daoIncidente.Add(inc1);
-		// daoIncidente.Add(inc2);
-		// daoIncidente.Add(inc3);
-		// daoIncidente.Add(inc4);
-		// daoIncidente.Add(inc5);
+		 daoIncidente.Add(inc1);
+		 daoIncidente.Add(inc1b);
+		 daoIncidente.Add(inc1c);
+		 daoIncidente.Add(inc2);
+		 daoIncidente.Add(inc3);
+		 daoIncidente.Add(inc4);
+		 daoIncidente.Add(inc5);
+
 
 		// System.out.println(daoCliente.ListarClientes()+""); //LISTAR TODOS LOS
 		// CLIENTES EXISTENTES
@@ -130,12 +138,17 @@ public class Main {
 
 		 //tecnicosPorEspecialidad("Windows");
 		
+		tecnicoConMasIncidentesResueltos(4);
 		clientesSistema();
 
 	}
 
-	public static void incidentesResueltos(int dias) {
-
+	public static void tecnicoConMasIncidentesResueltos(int dias) {
+		// Quien fue el tecnico con mas incidentes resueltos en los ultimos N dias
+		DaoTecnico daoTecnico = new DaoTecnico();
+		daoTecnico.borrarSobrantesIncidentexTecnico();
+		Tecnico tecnico = daoTecnico.tecnicoConMasIncidentesResueltos(dias);
+		System.out.println("El tecnico que más incidentes resolvió en los últimos " + dias + "es: " + tecnico);
 	}
 
 	public static void tecnicosPorEspecialidad(String especialidad) {

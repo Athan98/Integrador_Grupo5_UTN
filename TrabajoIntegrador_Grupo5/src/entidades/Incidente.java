@@ -25,15 +25,16 @@ public class Incidente implements Serializable {
 	private int idIncidente;
 	private String descripcion;
 	private boolean resuelto;
-	private LocalDate fechaReporte;
-	private LocalDate fechaResolucion;
+	private String fechaReporte;
+	private String fechaResolucion;
 
 	@ManyToOne
 	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
 
 	@ManyToMany(cascade = { CascadeType.ALL })
-	@JoinTable(name = "Incidente_x_Tecnico", joinColumns = { @JoinColumn(name = "idIncidente") }, inverseJoinColumns = {
+	@JoinTable(name = "Incidente_x_Tecnico", joinColumns = { @JoinColumn(name = "idIncidente") }, 
+	inverseJoinColumns = {
 			@JoinColumn(name = "idTecnico") })
 	List<Tecnico> ListaTecnicos = new ArrayList<Tecnico>();
 
@@ -46,7 +47,7 @@ public class Incidente implements Serializable {
 	private Operador operador;
 
 	
-	public Incidente(String descripcion, boolean resuelto, LocalDate fechaReporte, LocalDate fechaResolucion,
+	public Incidente(String descripcion, boolean resuelto, String fechaReporte, String fechaResolucion,
 			Cliente cliente, List<Tecnico> listaTecnicos, Especialidad especialidad, Operador operador) {
 		this.descripcion = descripcion;
 		this.resuelto = resuelto;
@@ -58,8 +59,8 @@ public class Incidente implements Serializable {
 		this.operador = operador;
 	}
 
-	public Incidente(int idIncidente, String descripcion, boolean resuelto, LocalDate fechaReporte,
-			LocalDate fechaResolucion, Cliente cliente, List<Tecnico> listaTecnicos, Especialidad especialidad) {
+	public Incidente(int idIncidente, String descripcion, boolean resuelto, String fechaReporte,
+			String fechaResolucion, Cliente cliente, List<Tecnico> listaTecnicos, Especialidad especialidad) {
 		super();
 		this.idIncidente = idIncidente;
 		this.descripcion = descripcion;
@@ -99,19 +100,19 @@ public class Incidente implements Serializable {
 		this.resuelto = resuelto;
 	}
 
-	public LocalDate getFechaReporte() {
+	public String getFechaReporte() {
 		return fechaReporte;
 	}
 
-	public void setFechaReporte(LocalDate fechaReporte) {
+	public void setFechaReporte(String fechaReporte) {
 		this.fechaReporte = fechaReporte;
 	}
 
-	public LocalDate getFechaResolucion() {
+	public String getFechaResolucion() {
 		return fechaResolucion;
 	}
 
-	public void setFechaResolucion(LocalDate fechaResolucion) {
+	public void setFechaResolucion(String fechaResolucion) {
 		this.fechaResolucion = fechaResolucion;
 	}
 
