@@ -1,7 +1,12 @@
 package dao;
 
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
 import org.hibernate.Session;
 import entidades.Incidente;
+import entidades.Tecnico;
 
 public class DaoIncidente {
 	public void Add(Incidente incidente) 
@@ -51,5 +56,24 @@ public class DaoIncidente {
         session.getTransaction().commit();        
         
         config.cerrarSession();
+	}
+	
+	public List<Incidente> listarIncidentes(){
+		
+		ConfigHibernate config = new ConfigHibernate();
+		Session session = config.abrirConexion();
+		List<Incidente> incidentesList = null;
+
+		session.beginTransaction();
+		try {
+		incidentesList = session.createQuery("FROM Incidente").list();
+		}catch (NullPointerException ex) {
+			JOptionPane.showMessageDialog(null, ex.getMessage());
+		}catch (Exception ex) {
+			JOptionPane.showMessageDialog(null, ex.getMessage());
+		}
+		
+
+		return incidentesList;
 	}
 }

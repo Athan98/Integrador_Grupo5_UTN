@@ -68,7 +68,7 @@ public class DaoCliente {
 		}catch (Exception ex) {
 			JOptionPane.showMessageDialog(null, ex.getMessage());
 		}
-		config.cerrarSession();
+		
 
 		return clientesList;
 	}
